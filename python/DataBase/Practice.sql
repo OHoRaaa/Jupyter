@@ -149,6 +149,89 @@ select * from onepiece where prize > all (select prize from onepiece where homet
 
 
 
+use shopdb;
+
+select * from membertbl;
+
+select memberaddress from membertbl;
+
+select memberid from membertbl;
+
+select memberid from membertbl where membername = '한국찬' or memberaddress = '경기도 성남시 분당구';
+
+select * from producttbl;
+
+select productname, company from producttbl where cost < 15;
+
+-- employees 데이터베이스에서 titles 테이블의 모든 데이터를 출력
+
+use employees;
+select * from titles;
+
+
+use shopdb;
+select * from membertbl;
+select * from producttbl;
+
+-- 삼성 제품만 출력
+select productname from producttbl where company = '삼성';
+
+-- 세탁기의 원가는 얼마인가
+select cost from producttbl where productname = '세탁기';
+
+-- shopdb 데이터베이스의 테이블 목록을 출력
+show tables;
+
+-- employees 데이터베이스에서 종업원 전체 목록을 출력
+use employees;
+select * from employees;
+select count(*)from employees;
+
+-- 남성 종사자의 목록을 출력하시오 
+select * from employees where gender = 'M';
+
+-- 60년 이전 출생자의 이름과 사번 목록을 출력 
+select first_name, last_name, emp_no from employees where birth_date < '1960-01-01';
+
+-- 연봉 1억 이상인 사람의 emp_no를 출력
+select * from salaries; 
+select emp_no from salaries where salary >= 50000;
+
+-- 연봉 1억 이상인 사람의 인원수를 출력
+select count(emp_no) from salaries where salary >= 50000;
+
+-- 입사연도가 1990년 07월 07일 이전인 'engineer'의 데이터를 출력
+select * from titles;
+select * from titles where from_date < '1990-07-07' and title = 'engineer';
+
+
+create database cartoon;
+use cartoon;
+
+create table bleach(
+           name char(10) primary key,
+           species char(10) not null,
+           age int not null,
+           hometown char(15) not null);
+
+insert into bleach values('Ichigo', 'reaper', 18, 'earth');
+insert into bleach values('Ooryu', 'queency', 18, 'earth');
+insert into bleach values('Lenji', 'reaper', 19, 'soulsociety');
+insert into bleach values('Stark', 'arankal', 33, 'wecomoond');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
