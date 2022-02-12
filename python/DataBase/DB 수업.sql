@@ -173,7 +173,7 @@ select * from usertbl where addr in (select addr from usertbl where name = '김�
 select height from usertbl where addr = '경남';
 select * from usertbl where height > (select height from usertbl where addr = '경남'); -- error
 select * from usertbl where height > all(select height from usertbl where addr = '경남'); -- 최대값
-select * from usertbl where height > any(select height from usertbl where addr = '경남'); -- 최소값   => 이게 정답
+select * from usertbl where height > any(select height from usertbl where addr = '경남'); -- 최소값  
 
 -- 경남에 사는 사람과 키가 동일한 사람의 데이터 출력
 select * from usertbl where height = (select height from usertbl where addr = '경남'); -- error
